@@ -9,41 +9,39 @@ public class MathArrayUtils {
     }
 
     public static int sum(int[] values) {
-        int sum = 0;
+        int total = 0;
 
         for (int value : values) {
-            sum += value;
+            total += value;
         }
-        return sum;
+        return total;
     }
 
     public static double average(int[] values) {
-        double average = sum(values) / (double)values.length;
-
-        return average;
+        return (double) sum(values) / values.length;
     }
 
     public static int min(int[] values) {
-        int min = values[0];
+        int minValue = values[0];
 
         for (int value : values) {
-           if(min > value) {
-               min = value;
+           if(minValue > value) {
+               minValue = value;
            }
         }
-        return min;
+        return minValue;
 
     }
 
     public static int max(int[] values) {
-        int max = values[0];
+        int maxValue = values[0];
 
-        for (int value : values) {
-            if(max < value) {
-                max = value;
+        for (int value : values) { //다소 비효율적일 수 있음 (index 0부터 비교하므로) > 따라서 for문 통해 i = 1부터 비교할 수 있도록 처리하는 것도 좋음
+            if(maxValue < value) {
+                maxValue = value;
             }
         }
 
-        return max;
+        return maxValue;
     }
 }
